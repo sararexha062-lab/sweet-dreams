@@ -1,0 +1,412 @@
+```html
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Dreams | Pastiçeri</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff7f2;
+      color: #3b2a24;
+    }
+
+    header {
+      background: linear-gradient(to right, #8b3a3a, #d98c8c);
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url("https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h2 {
+      font-size: 58px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ffcf87;
+      color: #3b2a24;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: white;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 15px;
+      color: #8b3a3a;
+    }
+
+    .subtitle {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      color: #8b3a3a;
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .price {
+      color: #d97706;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .about {
+      background-color: #ffe8dc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .about-text h2 {
+      font-size: 38px;
+      color: #8b3a3a;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .math-box {
+      background: white;
+      border-left: 8px solid #8b3a3a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      margin-top: 25px;
+    }
+
+    .math-box h3 {
+      color: #8b3a3a;
+      margin-bottom: 15px;
+    }
+
+    .math-box p {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+
+    .stat {
+      background-color: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    }
+
+    .stat h3 {
+      font-size: 36px;
+      color: #8b3a3a;
+    }
+
+    .stat p {
+      margin-top: 10px;
+      font-size: 17px;
+    }
+
+    .contact {
+      background: linear-gradient(to right, #8b3a3a, #d98c8c);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #3b2a24;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h2 {
+        font-size: 42px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Sweet Dreams</h1>
+    <nav>
+      <a href="#home">Kreu</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">Rreth Nesh</a>
+      <a href="#math">Matematika</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Ëmbëlsi që të mbetet në mendje</h2>
+      <p>
+        Sweet Dreams është një pastiçeri moderne që ofron torta, ëmbëlsira,
+        kafe dhe pije të freskëta. Ne bashkojmë shijen, cilësinë dhe shërbimin
+        profesional për çdo klient.
+      </p>
+      <a href="#menu" class="btn">Shiko Produktet</a>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2 class="title">Produktet Tona</h2>
+    <p class="subtitle">
+      Produktet tona përgatiten çdo ditë me përbërës cilësorë dhe kujdes të veçantë.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>Torta Speciale</h3>
+          <p>Torta për ditëlindje, festa dhe raste të veçanta.</p>
+          <p class="price">20 €</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>Cheesecake</h3>
+          <p>Ëmbëlsirë e butë dhe elegante me shije fantastike.</p>
+          <p class="price">4 €</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>Kafe Speciale</h3>
+          <p>Kafe e freskët për një mëngjes të ëmbël dhe energjik.</p>
+          <p class="price">2 €</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=80">
+        <div class="card-content">
+          <h3>Cupcakes</h3>
+          <p>Të vogla, të bukura dhe shumë të shijshme.</p>
+          <p class="price">3 €</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80">
+
+    <div class="about-text">
+      <h2>Rreth Biznesit</h2>
+      <p>
+        Sweet Dreams është një biznes i vogël, por i menduar në mënyrë profesionale.
+        Qëllimi ynë është të ofrojmë produkte cilësore dhe shërbim të shpejtë.
+      </p>
+      <p>
+        Për të hapur këtë biznes janë analizuar investimi fillestar, shpenzimet mujore,
+        të ardhurat dhe fitimi. Kjo tregon se matematika është shumë e rëndësishme
+        në çdo vendim financiar.
+      </p>
+    </div>
+  </section>
+
+  <section id="math">
+    <h2 class="title">Matematika në Biznes</h2>
+    <p class="subtitle">
+      Çdo biznes ka nevojë për llogaritje të sakta për të qenë i suksesshëm.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>6400 €</h3>
+        <p>Kapitali fillestar</p>
+      </div>
+
+      <div class="stat">
+        <h3>4000 €</h3>
+        <p>Shpenzimet mujore</p>
+      </div>
+
+      <div class="stat">
+        <h3>18000 €</h3>
+        <p>Të ardhurat mujore</p>
+      </div>
+
+      <div class="stat">
+        <h3>14000 €</h3>
+        <p>Fitimi mujor</p>
+      </div>
+    </div>
+
+    <div class="math-box">
+      <h3>Llogaritja e fitimit</h3>
+      <p>
+        Nëse pastiçeria shet 150 produkte në ditë me çmim mesatar 4 €,
+        atëherë të ardhurat ditore janë:
+        <br><br>
+        <strong>150 × 4 = 600 € në ditë</strong>
+        <br>
+        <strong>600 × 30 = 18000 € në muaj</strong>
+        <br><br>
+        Fitimi llogaritet:
+        <br>
+        <strong>Fitimi = Të ardhurat - Shpenzimet</strong>
+        <br>
+        <strong>18000 € - 4000 € = 14000 €</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Na Kontaktoni</h2>
+    <p>Adresa: Tiranë, Shqipëri</p>
+    <p>Telefon: +355 69 000 0000</p>
+    <p>Email: sweetdreams@gmail.com</p>
+    <p>Instagram: @sweetdreams.pasticeri</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Sweet Dreams | Projekt Matematikë</p>
+    <p>Punuan: Sara, Senada, Jasmina, Irsa</p>
+  </footer>
+
+</body>
+</html>
+```
